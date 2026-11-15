@@ -1,0 +1,994 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="google-site-verification" content="Mb6uXS4el8y5AgRbekzuU4wBSHPlzR9lN8joRoqRaNc" />
+<link rel="canonical" href="https://julesferreira27.github.io/">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" type="image/png" sizes="192x192">
+<link rel="icon" href="favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"WebSite","name":"Jules Ferreira","alternateName":"Jules Ferreira – beetle macroevolution","url":"https://julesferreira27.github.io/"},
+ {"@type":"Person","name":"Jules Ferreira","url":"https://julesferreira27.github.io/","jobTitle":"PhD candidate","description":"Macroevolution, taxonomy and systematics of beetles (Coleoptera)."}
+]}
+</script>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jules Ferreira">
+<meta property="og:title" content="Jules Ferreira – PhD candidate">
+<meta property="og:description" content="Macroevolution, taxonomy and systematics of beetles (Coleoptera), from fossils in amber to dated phylogenies.">
+<meta property="og:url" content="https://julesferreira27.github.io/">
+<meta property="og:image" content="https://julesferreira27.github.io/img/og_image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Imaginedraconium daemon in Oise amber and its synchrotron 3D reconstruction">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://julesferreira27.github.io/img/og_image.jpg">
+<meta name="description" content="Jules Ferreira, PhD candidate in beetle macroevolution, taxonomy and systematics.">
+<title>Jules Ferreira</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: fixed sidebar of tabs + one reading column. Theme: black & pumpkin orange (Halloween), the same in every colour mode at the owner's request; ICS colours only in the deep-time strip */
+:root{
+  --bg:#0b0a09; --side:#100f0d; --surface:#171512; --fg:#f1ebe3; --muted:#a59b8f; --rule:#2d2822;
+  --accent:#ff7518; --accent-ink:#ff9a47; --chip:#1c1916; --glow:rgba(255,117,24,.10); color-scheme:dark;
+  --display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0b0a09; --side:#100f0d; --surface:#171512; --fg:#f1ebe3; --muted:#a59b8f; --rule:#2d2822;
+  --accent:#ff7518; --accent-ink:#ff9a47; --chip:#1c1916; --glow:rgba(255,117,24,.10); color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0b0a09; --side:#100f0d; --surface:#171512; --fg:#f1ebe3; --muted:#a59b8f; --rule:#2d2822;
+  --accent:#ff7518; --accent-ink:#ff9a47; --chip:#1c1916; --glow:rgba(255,117,24,.10); color-scheme:dark }
+
+body{background:radial-gradient(70rem 34rem at 100% -12%,var(--glow),transparent 62%) var(--bg) no-repeat;color:var(--fg);font:400 1.04rem/1.62 var(--body);margin:0;min-height:100vh}
+::selection{background:var(--accent);color:#0b0a09}
+a{color:var(--accent-ink);text-decoration-thickness:1px;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.12}
+p{margin:0}
+.label{font:500 .72rem/1.3 var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--accent)}
+i.tx{font-style:italic}
+
+/* ---------- frame ---------- */
+.layout{display:grid;grid-template-columns:16.5rem minmax(0,1fr);min-height:100vh}
+.side{background:var(--side);border-right:1px solid var(--rule);
+  padding-block:2rem;padding-left:max(1.5rem,env(safe-area-inset-left,0px));padding-right:1.5rem;
+  position:sticky;top:0;align-self:start;height:100vh;box-sizing:border-box;display:flex;flex-direction:column;gap:2rem;overflow-y:auto}
+.brand .name{font:700 1.45rem/1.05 var(--display);letter-spacing:-.02em}
+.brand .name::after{content:"";display:block;width:2.4rem;height:3px;border-radius:2px;background:var(--accent);margin-top:.75rem}
+.brand .role{margin-top:.45rem;font-size:.92rem;color:var(--muted);line-height:1.4}
+nav.tabs{display:flex;flex-direction:column;gap:.15rem}
+nav.tabs a{font:500 .95rem/1 var(--display);color:var(--fg);text-decoration:none;padding:.62rem .7rem;border-radius:4px;border-left:3px solid transparent}
+nav.tabs a:hover{background:var(--chip)}
+nav.tabs a[aria-current="page"]{border-left-color:var(--accent);background:var(--surface);color:var(--accent-ink)}
+.side .profiles{margin-top:auto;display:flex;flex-direction:column;gap:.5rem;font:500 .8rem/1.3 var(--mono)}
+.side .profiles a{color:var(--fg);text-decoration:none}
+.side .profiles a:hover{color:var(--accent-ink)}
+
+main{min-width:0;padding-block:3rem 2rem;padding-left:clamp(1.25rem,4vw,3.5rem);padding-right:max(16px,env(safe-area-inset-right,0px))}
+.col{max-width:50rem;margin-inline:auto}
+@media (min-width:1400px){.col{max-width:62rem}.intro{grid-template-columns:minmax(0,1fr) 15rem;gap:3rem}.intro .lede{max-width:46rem}.intro .more,.postdoc{max-width:48rem}}
+@media (min-width:1800px){html{font-size:17.5px}.col{max-width:66rem}}
+section[data-tab]{display:flex;flex-direction:column;gap:2.4rem}
+section[data-tab][hidden]{display:none}
+.sec-title{display:flex;flex-direction:column;gap:.5rem}
+.sec-title h1{font-size:clamp(2rem,4.2vw,2.8rem);letter-spacing:-.025em}
+.sec-title p{color:var(--muted);max-width:42rem}
+h2.sub{font-size:1.2rem;letter-spacing:-.01em;padding-bottom:.55rem;border-bottom:1px solid var(--rule)}
+
+/* ---------- about ---------- */
+.intro{display:grid;grid-template-columns:minmax(0,1fr) 13rem;gap:2.4rem;align-items:start}
+.intro h1{font-size:clamp(2.4rem,5vw,3.6rem);letter-spacing:-.03em;margin-top:.5rem}
+.intro .lede{font-size:1.2rem;line-height:1.5;margin-top:1rem;max-width:36rem}
+.intro .more{margin-top:1rem;max-width:38rem}
+.intro .counts{margin-top:1.2rem;font:500 .8rem/1.6 var(--mono);color:var(--muted);letter-spacing:.03em}
+.intro .counts b{color:var(--fg);font-weight:500}
+.portrait{margin:0;display:flex;flex-direction:column;gap:.5rem}
+.portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:3px;display:block;filter:grayscale(1);box-shadow:0 0 0 1px var(--rule),0 22px 48px -22px rgba(255,117,24,.45)}
+.portrait figcaption{font:400 .72rem/1.4 var(--mono);color:var(--muted)}
+.where{display:flex;flex-direction:column;gap:.15rem;margin-top:1.4rem;font-size:.95rem}
+.where{font-size:1rem}
+.postdoc{margin-top:1.4rem;padding:1rem 1.15rem;border:1px solid var(--accent);border-left-width:4px;border-radius:4px;background:var(--surface);max-width:38rem}
+.postdoc h3{font-size:1.02rem;color:var(--accent-ink);margin-bottom:.4rem}
+.postdoc p{font-size:.96rem}
+.postdoc .pd-mail{margin-top:.7rem;font:500 .85rem/1.3 var(--mono)}
+.logos{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.8rem}
+.logos img{height:3.2rem;width:auto;background:#fff;border-radius:4px;padding:.4rem .6rem}
+.where .lab{font:500 .72rem/1.3 var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+.examples{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.6rem;margin-top:1.2rem}
+.examples figure,.photo{margin:0}
+.examples img,.photo img{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:3px;background:#fff}
+.examples figcaption,.photo figcaption{margin-top:.55rem;font-size:.86rem;line-height:1.5;color:var(--muted)}
+.examples figcaption b,.photo figcaption b{color:var(--fg);font-weight:600}
+a.zoomable{display:block;cursor:zoom-in}
+a.zoomable:hover img{border-color:var(--accent)}
+.photo{max-width:11rem;margin-top:.8rem}
+.photo.wide{max-width:22rem}
+.timeline p.doc{margin-top:.55rem;font:500 .8rem/1.3 var(--mono)}
+.examples.three{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.62fr);align-items:start}
+.examples.field{grid-template-columns:minmax(0,2fr) minmax(0,1fr);align-items:start}
+@media (max-width:860px){.examples,.examples.field,.examples.three{grid-template-columns:minmax(0,1fr)}.examples.three figure:last-child{max-width:15rem}}
+
+.interests{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.6rem}
+.interests h3{font-size:1.02rem;margin-bottom:.4rem}
+.interests p{font-size:.96rem}
+
+.deeptime .dt-key{display:flex;flex-wrap:wrap;gap:1.2rem;margin-bottom:.8rem;font:400 .78rem/1.3 var(--mono);color:var(--muted)}
+.dt-key span{display:inline-flex;align-items:center;gap:.45rem}
+.dt-key i{display:inline-block;width:14px;height:6px;border-radius:3px;background:var(--fg)}
+.dt-key i.amb{width:10px;height:10px;border-radius:2px;transform:rotate(45deg);background:var(--accent)}
+.dt-scroll{overflow-x:auto}
+svg.strip{display:block;width:100%;min-width:640px;height:auto}
+.strip .lbl{font-family:var(--mono);font-size:10.5px;fill:var(--fg);paint-order:stroke;stroke:var(--bg);stroke-width:5px;stroke-linejoin:round}
+.strip .tick{font-family:var(--mono);font-size:10px;fill:var(--muted)}
+.strip .bar{stroke:var(--fg);stroke-width:6;stroke-linecap:round}
+.strip .pt{fill:var(--fg)}
+.strip .amb{fill:var(--accent)}
+.strip .guide{stroke:var(--accent);stroke-dasharray:2 3;stroke-width:1}
+.strip .base{stroke:var(--rule)}
+.strip .per{font-family:var(--mono);font-size:10px}
+.deeptime .note{margin-top:.6rem;font:400 .74rem/1.5 var(--mono);color:var(--muted)}
+
+.skills{display:flex;flex-direction:column;gap:1.3rem}
+.skill-row{display:grid;grid-template-columns:12.5rem minmax(0,1fr);gap:1.2rem;align-items:start}
+.skill-row h3{font-size:.98rem;padding-top:.3rem}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem;list-style:none;margin:0;padding:0}
+.chips li{font:400 .82rem/1.25 var(--mono);background:var(--chip);padding:.42rem .6rem;border-radius:3px}
+
+/* ---------- publications ---------- */
+.pub-list{display:flex;flex-direction:column;gap:2rem}
+.yr-sep{display:flex;align-items:center;gap:.8rem;margin:0;font:500 .9rem/1 var(--mono);letter-spacing:.06em;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+.yr-sep::after{content:"";flex:1;border-top:1px solid var(--rule)}
+.pub{display:grid;grid-template-columns:10.5rem minmax(0,1fr);gap:1.6rem;align-items:start}
+.pub .fig{display:block;cursor:zoom-in;text-decoration:none;color:var(--muted)}
+.pub .fig img{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:3px;background:#fff;transition:border-color .15s}
+.pub .fig span{display:block;margin-top:.45rem;font:400 .7rem/1.3 var(--mono);letter-spacing:.03em}
+.pub .fig:hover img{border-color:var(--accent)}
+.pub .fig:hover span{color:var(--accent-ink)}
+.pub-meta{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .7rem;font:500 .76rem/1 var(--mono);letter-spacing:.04em}
+.pub-meta .yr{color:var(--muted);font-variant-numeric:tabular-nums}
+.pub-meta .jr{color:var(--fg)}
+.badge{display:inline-block;padding:.32rem .45rem;border-radius:3px;border:1px solid var(--accent);color:var(--accent-ink);font:500 .72rem/1 var(--mono);letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.badge.soft{border-color:var(--rule);color:var(--muted)}
+.badge.oa{border-color:var(--rule);color:var(--fg)}
+.pub h3{font-size:1.08rem;line-height:1.3;margin-top:.6rem;font-weight:700}
+.fields{display:flex;flex-wrap:wrap;gap:.3rem;list-style:none;margin:.55rem 0 0;padding:0}
+.fields li{font:500 .7rem/1 var(--mono);letter-spacing:.03em;color:var(--muted);background:var(--chip);padding:.32rem .45rem;border-radius:3px}
+.pub h3 a{color:var(--fg);text-decoration:none}
+.pub h3 a:hover{color:var(--accent-ink);text-decoration:underline}
+.pub .result{margin-top:.55rem;font-size:.98rem}
+.pub .ref{margin-top:.6rem;font-size:.85rem;line-height:1.5;color:var(--muted)}
+.pub .ref b{color:var(--fg);font-weight:600}
+.pub .ref a{overflow-wrap:anywhere}
+.credit{font:400 .74rem/1.5 var(--mono);color:var(--muted)}
+
+/* figure viewer */
+dialog.zoom{border:0;padding:0;margin:auto;max-width:min(96vw,1400px);max-height:94vh;background:var(--surface);color:var(--fg);border-radius:4px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+dialog.zoom[open]{display:flex;flex-direction:column}
+dialog.zoom::backdrop{background:rgba(0,0,0,.86)}
+.zoom-bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.5rem .7rem;border-bottom:1px solid var(--rule);font:400 .76rem/1.3 var(--mono)}
+.zoom-bar .zcap{color:var(--muted);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.zoom-bar .zact{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+.zoom-bar form{margin:0}
+.zoom-bar a,.zoom-bar button{font:500 .74rem/1 var(--mono);color:var(--fg);background:transparent;border:1px solid var(--rule);border-radius:3px;padding:.5rem .6rem;text-decoration:none;cursor:pointer}
+.zoom-bar a:hover,.zoom-bar button:hover{border-color:var(--accent);color:var(--accent-ink)}
+.zoom-body{overflow:auto;background:#fff;max-width:min(96vw,1400px);max-height:calc(94vh - 2.9rem)}
+.zoom-body img{display:block;max-width:min(96vw,1400px);max-height:calc(94vh - 2.9rem);width:auto;height:auto;margin:auto;cursor:zoom-in}
+.zoom-body img.actual{max-width:none;max-height:none;cursor:zoom-out}
+
+/* ---------- congresses, funding, experience ---------- */
+.year-block{display:grid;grid-template-columns:4.5rem minmax(0,1fr);gap:1.4rem}
+.year-block .yr{font:700 1.5rem/1 var(--display);color:var(--accent-ink);font-variant-numeric:tabular-nums;padding-top:.15rem}
+.events{display:flex;flex-direction:column;gap:1.5rem;list-style:none;margin:0;padding:0}
+.event .ev{font:700 1rem/1.3 var(--display)}
+.event .place .kind{color:var(--accent)}
+.event .place{font:400 .78rem/1.4 var(--mono);color:var(--muted);margin-top:.25rem}
+.event .talk{margin-top:.45rem;font-style:italic}
+.event .by{font-size:.88rem;color:var(--muted);margin-top:.3rem}
+.event .by b{color:var(--fg);font-weight:600}
+.event .src{font:400 .78rem/1.4 var(--mono);margin-top:.35rem}
+
+.rows{display:flex;flex-direction:column;list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.rows li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1rem;padding-block:1.1rem;border-bottom:1px solid var(--rule);align-items:baseline}
+.rows .what{font:700 1rem/1.3 var(--display)}
+.rows .who{font-size:.93rem;color:var(--muted);margin-top:.25rem}
+.rows .code{font:400 .78rem/1.4 var(--mono);color:var(--muted);margin-top:.3rem}
+.rows .amt{font:500 .95rem/1 var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.timeline{display:flex;flex-direction:column;gap:1.8rem;list-style:none;margin:0;padding:0}
+.timeline li{display:grid;grid-template-columns:9rem minmax(0,1fr);gap:1.4rem}
+.timeline .when{padding-top:.2rem}
+.timeline .when .label{color:var(--accent-ink)}
+.timeline h3{font-size:1.05rem}
+.timeline .inst{font-size:.95rem;color:var(--muted);margin-top:.25rem}
+.timeline p.desc{margin-top:.5rem;font-size:.97rem}
+
+/* ---------- contact ---------- */
+.contact{display:flex;flex-direction:column;gap:1.4rem}
+.mail{display:grid;grid-template-columns:9rem minmax(0,1fr);gap:1rem;align-items:center}
+.mail .addr-row{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+.addr{font:500 .95rem/1.2 var(--mono);user-select:all;background:var(--surface);border:1px solid var(--rule);padding:.6rem .75rem;border-radius:3px;word-break:break-all}
+button.copy,a.write{font:500 .76rem/1 var(--mono);letter-spacing:.05em;background:transparent;color:var(--fg);border:1px solid var(--rule);padding:.6rem .75rem;border-radius:3px;cursor:pointer;text-decoration:none}
+button.copy:hover,a.write:hover{border-color:var(--accent);color:var(--accent-ink)}
+address{font-style:normal;line-height:1.55}
+.profile-links{display:flex;flex-wrap:wrap;gap:.8rem}
+.profile-links a{font:500 .85rem/1 var(--mono);padding:.65rem .8rem;border:1px solid var(--rule);border-radius:3px;text-decoration:none;color:var(--fg)}
+.profile-links a:hover{border-color:var(--accent);color:var(--accent-ink)}
+
+.collab{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;list-style:none;margin:0;padding:0}
+.collab li{background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--accent);border-radius:4px;padding:1rem 1.1rem}
+.collab .cname{font:700 1.02rem/1.3 var(--display)}
+.collab .caff{font-size:.92rem;color:var(--muted);margin-top:.3rem;line-height:1.45}
+.collab .ctopic{font:400 .78rem/1.45 var(--mono);color:var(--accent-ink);margin-top:.6rem}
+@media (max-width:860px){.collab{grid-template-columns:minmax(0,1fr)}}
+.feature + .feature{margin-top:1rem}
+.feature{display:grid;grid-template-columns:9rem minmax(0,1fr);gap:1.3rem;align-items:start;margin-top:1.2rem;padding:1.1rem;background:var(--surface);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:4px}
+.feature img{width:100%;height:auto;display:block;border-radius:3px}
+.feature h3{font-size:1.1rem;margin-top:.4rem;line-height:1.3}
+.feature h3 a{color:var(--fg);text-decoration:none}
+.feature h3 a:hover{color:var(--accent-ink);text-decoration:underline}
+.feature p{font-size:.96rem;margin-top:.5rem}
+.feature .fref{font-size:.85rem;line-height:1.5;color:var(--muted)}
+.feature .fref b{color:var(--fg);font-weight:600}
+.feature .fref a{overflow-wrap:anywhere}
+.news{list-style:none;margin:1rem 0 0;padding:0;display:flex;flex-direction:column;gap:.6rem}
+.news li{display:grid;grid-template-columns:5.5rem minmax(0,1fr);gap:1rem;font-size:.95rem}
+.news .ndate{font:500 .78rem/1.6 var(--mono);color:var(--accent-ink)}
+@media (max-width:860px){.feature{grid-template-columns:6rem minmax(0,1fr);gap:.9rem}.news li{grid-template-columns:minmax(0,1fr);gap:.1rem}}
+/* ---------- outreach ---------- */
+.reach-stats{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.8rem;list-style:none;padding:0}
+.reach-stats li{font:500 .78rem/1.25 var(--mono);background:var(--chip);color:var(--accent-ink);padding:.42rem .6rem;border-radius:3px}
+.press{list-style:none;margin:.4rem 0 0;padding:0}
+.press li{display:grid;grid-template-columns:6.5rem minmax(0,1fr) auto;gap:1rem;align-items:baseline;padding-block:.8rem;border-bottom:1px solid var(--rule)}
+.press .pdate{font:500 .78rem/1.5 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.press a{text-decoration:none;color:var(--fg);min-width:0}
+.press a:hover .outlet,.press a:focus-visible .outlet{color:var(--accent-ink);text-decoration:underline}
+.press .outlet{display:block;font:700 1rem/1.3 var(--display)}
+.press .headline{display:block;font-size:.93rem;color:var(--muted);margin-top:.15rem}
+.press .lang{font:500 .7rem/1 var(--mono);letter-spacing:.06em;color:var(--muted);border:1px solid var(--rule);border-radius:3px;padding:.3rem .4rem}
+@media (max-width:860px){.press li{grid-template-columns:minmax(0,1fr) auto;gap:.2rem .8rem}.press .pdate{grid-column:1 / -1}}
+footer.foot{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--rule);font:400 .76rem/1.5 var(--mono);color:var(--muted)}
+
+/* ---------- narrow screens ---------- */
+@media (max-width:860px){
+  .layout{grid-template-columns:minmax(0,1fr)}
+  .side{position:static;height:auto;border-right:0;border-bottom:1px solid var(--rule);gap:1rem;
+    padding-block:1.2rem .6rem;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  nav.tabs{flex-direction:row;overflow-x:auto;gap:.2rem;padding-bottom:.4rem}
+  nav.tabs a{white-space:nowrap;border-left:0;border-bottom:3px solid transparent;border-radius:3px 3px 0 0}
+  nav.tabs a[aria-current="page"]{border-bottom-color:var(--accent)}
+  .side .profiles{display:none}
+  main{padding-block:2rem 1.5rem;padding-left:max(16px,env(safe-area-inset-left,0px))}
+  .intro{grid-template-columns:minmax(0,1fr);gap:1.4rem}
+  .portrait{order:-1;max-width:10.5rem}
+  .interests{grid-template-columns:minmax(0,1fr)}
+  .skill-row{grid-template-columns:minmax(0,1fr);gap:.5rem}
+  .pub{grid-template-columns:6.5rem minmax(0,1fr);gap:1rem}
+  .year-block{grid-template-columns:minmax(0,1fr);gap:.8rem}
+  .timeline li{grid-template-columns:minmax(0,1fr);gap:.4rem}
+  .mail{grid-template-columns:minmax(0,1fr);gap:.4rem}
+}
+@media (prefers-reduced-motion:no-preference){ section[data-tab]{animation:in .25s ease-out} @keyframes in{from{opacity:.4}to{opacity:1}} }
+</style>
+
+</head>
+<body>
+<div class="layout">
+  <aside class="side">
+    <div class="brand">
+      <div class="name">Jules Ferreira</div>
+      <div class="role">PhD candidate</div>
+    </div>
+    <nav class="tabs" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#publications">Publications</a>
+      <a href="#congresses">Congresses &amp; seminars</a>
+      <a href="#outreach">Outreach</a>
+      <a href="#funding">Funding</a>
+      <a href="#experience">Experience</a>
+      <a href="#collaborations">Collaborations</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="profiles">
+      <a href="https://orcid.org/0009-0006-1919-8979" target="_blank" rel="noopener">ORCID ↗</a>
+      <a href="https://www.researchgate.net/profile/Jules-Ferreira-2" target="_blank" rel="noopener">ResearchGate ↗</a>
+      <a href="https://x.com/JulesFerre94120" target="_blank" rel="noopener">X ↗</a>
+      <a href="https://bsky.app/profile/jules2701.bsky.social" target="_blank" rel="noopener">Bluesky ↗</a>
+    </div>
+  </aside>
+
+  <main>
+    <div class="col">
+
+<!-- ===================== ABOUT ===================== -->
+<section data-tab="about" id="about" aria-label="About">
+  <div class="intro">
+    <div>
+      <div class="label">PhD candidate</div>
+      <h1>Jules Ferreira</h1>
+      <p class="lede">I study the macroevolution of beetles (Coleoptera), the most species-rich group of living organisms, combining their fossil record with phylogenies to understand how they diversified through time.</p>
+      <p class="more">I am a macroevolutionist, taxonomist and systematist working on Coleoptera, currently completing my PhD under the supervision of Dr David Peris (Institut Botànic de Barcelona) and Dr Fabien L. Condamine (Institut des Sciences de l’Évolution de Montpellier). Working at the interface between neontology and palaeontology, I describe new fossil and extant beetle taxa and analyse phylogenies and fossil data, separately or together, to date clades and try to understand how beetle lineages diversified. To do so, I employ state-of-the-art phylogenetic and macroevolutionary methods.</p>
+      <div class="where">
+        <div class="lab">Current affiliations</div>
+        <div>Institut Botànic de Barcelona (CSIC-CMCNB)</div>
+        <div>Facultat de Ciències de la Terra, Universitat de Barcelona</div>
+        <div class="logos"><img src="img/logo_ibb.png" alt="Institut Botànic de Barcelona (CSIC – Ajuntament de Barcelona)" width="263" height="140"><img src="img/logo_ub.png" alt="Universitat de Barcelona" width="465" height="140"></div>
+      </div>
+      <p class="counts"><b>11</b> peer-reviewed articles (<b>10</b> as first author) · <b>6</b> congress contributions (<b>5</b> oral) · <b>1</b> seminar</p>
+      <div class="postdoc">
+        <h3>Looking for my next adventure</h3>
+        <p>As I approach the end of my PhD, I am seeking postdoctoral opportunities to keep exploring the evolutionary history of life, from describing fossils to understanding how lineages diversify through time. The methods I use can be applied to virtually any group, though insects, and especially beetles, remain my favourites. I am open to collaborations and new projects, so feel free to get in touch!</p>
+        <p class="pd-mail"><a href="mailto:jules.ferreira27@gmail.com">jules.ferreira27@gmail.com</a></p>
+      </div>
+    </div>
+    <figure class="portrait">
+      <img src="img/photo.jpg" alt="Portrait of Jules Ferreira" width="520" height="650">
+    </figure>
+  </div>
+
+  <div>
+    <h2 class="sub">Latest news</h2>
+    <article class="feature">
+      <a class="zoomable" href="img/fig/dytbio.jpg" data-zoom data-caption="Graphical abstract · Systematic Entomology (2026)"><img src="img/fig/dytbio_t.jpg" alt="Graphical abstract: a diving beetle, range size by habitat type and a world map of dispersal routes" width="440" height="367" loading="lazy"></a>
+      <div>
+        <div class="label">New paper · November 2026</div>
+        <h3><a href="https://doi.org/10.1111/syen.70076" target="_blank" rel="noopener">Where did diving beetles come from, and what shapes their range size?</a></h3>
+        <p>We reconstructed the historical biogeography of diving beetles (Dytiscidae), which probably originated in the Nearctic during the Late Triassic (c. 210 Ma), and found that habitat type, niche breadth and diversification rates are associated with their range size, whereas body size is not.</p>
+        <p class="fref"><b>Ferreira, J.</b>, Toussaint, E. F. A., &amp; Condamine, F. L. · <a href="https://doi.org/10.1111/syen.70076" target="_blank" rel="noopener">Read the article ↗</a></p>
+      </div>
+    </article>
+    <article class="feature">
+      <a class="zoomable" href="img/fig/cnopus.jpg" data-zoom data-caption="†Cnopus twentyonepilotorum Ferreira &amp; Nel, 2026 in Oise amber and its 3D reconstruction · ZooKeys (2026)"><img src="img/fig/cnopus_t.jpg" alt="Cnopus twentyonepilotorum in Oise amber and its synchrotron 3D reconstruction" width="440" height="450" loading="lazy"></a>
+      <div>
+        <div class="label">New paper · November 2026</div>
+        <h3><a href="https://doi.org/10.3897/zookeys.1297.210120" target="_blank" rel="noopener">First fossil puppet beetle described from the 53-million-year-old Oise amber</a></h3>
+        <p>†<i>Cnopus twentyonepilotorum</i> Ferreira &amp; Nel, 2026 is the first puppet beetle (Aderidae) formally described from the lowermost Eocene Oise amber of France, studied with synchrotron X-ray microtomography. Its name honours the band Twenty One Pilots.</p>
+        <p class="fref"><b>Ferreira, J.</b>, Spiessberger, E. L., Nel, A., Patera, A., &amp; Peris, D. · <a href="https://doi.org/10.3897/zookeys.1297.210120" target="_blank" rel="noopener">Read the article ↗</a></p>
+      </div>
+    </article>
+  </div>
+
+  <div>
+    <h2 class="sub">Research</h2>
+    <div class="interests" style="margin-top:1.2rem">
+      <div>
+        <h3>Fossil beetles</h3>
+        <p>Description of fossil Coleoptera, with a particular focus on amber inclusions, from mid-Cretaceous to Eocene deposits, using light microscopy and, when needed or available, X-ray microtomography and 3D reconstructions.</p>
+      </div>
+      <div>
+        <h3>Beetle macroevolution</h3>
+        <p>Macroevolution of Coleoptera at a broad scale, combining phylogenies and the fossil record in Bayesian frameworks to estimate divergence times and diversification dynamics.</p>
+      </div>
+      <div>
+        <h3>Macroevolution of specific lineages in Coleoptera</h3>
+        <p>Focused studies of particular beetle lineages: dating clades, reconstructing their historical biogeography and exploring the mechanisms potentially linked to their diversification, such as competition, traits, habitats and biogeographic range size.</p>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h2 class="sub">Beyond the lab</h2>
+    <p style="margin-top:1rem;max-width:42rem">Insects are my passion, and beetles my favourite obsession. I love searching for them in the field, and museum collections are an essential part of my daily work. What still fascinates me most is how amber can preserve fossils in such exquisite detail that, despite their great age, they look as if they had been trapped yesterday. Each specimen, living or fossil, is a small window onto millions of years of evolution. And when I am not looking at beetles, there is a good chance I am listening to rock or metal.</p>
+  </div>
+
+  <div>
+    <h2 class="sub">In the field</h2>
+    <div class="examples field">
+      <figure>
+        <a class="zoomable" href="img/fig/field1.jpg" data-zoom data-caption="In the field"><img src="img/fig/field1_t.jpg" alt="Jules Ferreira crouching with forceps and a collecting tube, searching for beetles under a stone" width="620" height="413" loading="lazy"></a>
+      </figure>
+      <figure>
+        <a class="zoomable" href="img/fig/field2.jpg" data-zoom data-caption="In the field"><img src="img/fig/field2_t.jpg" alt="Jules Ferreira sampling a stream with an aquatic net" width="469" height="620" loading="lazy"></a>
+      </figure>
+    </div>
+  </div>
+
+  <div>
+    <h2 class="sub">Skills &amp; Expertise</h2>
+    <div class="skills" style="margin-top:1.3rem">
+      <div class="skill-row">
+        <h3>Palaeontology &amp; systematics</h3>
+        <ul class="chips">
+          <li>Description of new taxa</li><li>Phylogenetic analyses</li><li>Comparative morphology</li><li>Interpretive drawings</li><li>Taxonomy</li>
+        </ul>
+      </div>
+      <div class="skill-row">
+        <h3>Imaging &amp; 3D</h3>
+        <ul class="chips">
+          <li>Synchrotron phase-contrast microtomography</li><li>3D segmentation &amp; rendering (Avizo, VG Studio, 3D Slicer)</li><li>Focus stacking (Helicon Focus)</li>
+        </ul>
+      </div>
+      <div class="skill-row">
+        <h3>Phylogenetics &amp; dating</h3>
+        <ul class="chips">
+          <li>Phylogenetic inference (IQ-TREE, MrBayes, BEAST, RevBayes)</li><li>Total-evidence dating with the fossilized birth–death model (MrBayes, BEAST, RevBayes)</li><li>Tip dating with the fossilized birth–death model</li><li>Node dating</li><li>Morphological matrices (Mesquite)</li><li>Molecular data treatment</li><li>CO1 sequence analysis</li>
+        </ul>
+      </div>
+      <div class="skill-row">
+        <h3>Macroevolution &amp; biogeography</h3>
+        <ul class="chips">
+          <li>Bayesian Brownian Bridge (rootBBB)</li><li>PyRate: RJMCMC, BDCS, MCDD, MBD, DES, ADE &amp; ADE-NN, BDC, BDNN</li><li>DeepDive</li><li>Tapestree: CBD, BDD, CFBD, FBDD, OBD, OBDD, DBM, ESSE, TRIBE</li><li>BAMM</li><li>ClaDS</li><li>RevBayes</li><li>State-dependent speciation and extinction models (SSE)</li><li>Ancestral state reconstruction</li><li>BioGeoBEARS</li><li>Phylogenetic comparative methods</li>
+        </ul>
+      </div>
+      <div class="skill-row">
+        <h3>Programming</h3>
+        <ul class="chips"><li>R</li><li>Python</li><li>HTML</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PUBLICATIONS ===================== -->
+<section data-tab="publications" id="publications" aria-label="Publications">
+  <div class="sec-title">
+    <div class="label">Peer-reviewed articles · newest first</div>
+    <h1>Publications</h1>
+    <p>Eleven articles, ten of them as first author. IF = journal impact factor.</p>
+  </div>
+
+  <div class="pub-list">
+    <!-- one publication: copy an <article> block to add a new one -->
+    <h2 class="yr-sep">2026</h2>
+    <article class="pub">
+      <a class="fig" href="img/fig/palaeocnopus.jpg" data-zoom data-caption="†Palaeocnopus testardi Ferreira, 2026 in Oise amber and its 3D reconstruction · Fossil Record (2026)"><img src="img/fig/palaeocnopus_t.jpg" alt="Palaeocnopus testardi in Oise amber (left) and its synchrotron 3D reconstruction (right)" width="440" height="447" loading="lazy"></a>
+      <div>
+        <div class="pub-meta"><span class="yr">2026</span><span class="jr">Fossil Record</span><span class="badge">IF 2.0</span><span class="badge oa">Open access</span><span class="badge soft">Accepted</span></div>
+        <ul class="fields" aria-label="Research fields"><li>Palaeoecology</li><li>Palaeontology</li><li>Taxonomy</li></ul>
+        <h3>First occurrence of †<i class="tx">Palaeocnopus</i> (Coleoptera, Tenebrionoidea, Aderidae) in the lowermost Eocene Oise amber (France), with notes on beetle genera shared with the uppermost Eocene Baltic-related ambers</h3>
+        <p class="result">Describes †<i class="tx">Palaeocnopus testardi</i> Ferreira, 2026 (genus †<i class="tx">Palaeocnopus</i> Alekseev &amp; Grzymala, 2015) from synchrotron 3D renderings, the first record of the genus outside the Baltic-related ambers and the first documented extinct beetle genus shared by the c. 53 Ma Oise amber and the c. 36 Ma Baltic-related ambers, and compiles the beetle genera common to both deposits.</p>
+        <p class="ref"><b>Ferreira, J.</b>, Patera, A., Spiessberger, E. L., &amp; Nel, A. (accepted). First occurrence of †<i>Palaeocnopus</i> (Coleoptera, Tenebrionoidea, Aderidae) in the lowermost Eocene Oise amber (France), with notes on beetle genera shared with the uppermost Eocene Baltic-related ambers. <i>Fossil Record</i>.</p>
+      </div>
+    </article>
+
+    <article class="pub">
+      <a class="fig" href="img/fig/dytbio.jpg" data-zoom data-caption="Graphical abstract · Systematic Entomology (2026)"><img src="img/fig/dytbio_t.jpg" alt="Graphical abstract: a diving beetle, range size by habitat type (lotic, lentic, both) and a world map of dispersal routes between biogeographic regions" width="440" height="367" loading="lazy"></a>
+      <div>
+        <div class="pub-meta"><span class="yr">2026</span><span class="jr">Systematic Entomology</span><span class="badge">IF 4.3</span><span class="badge oa">Open access</span></div>
+        <ul class="fields" aria-label="Research fields"><li>Ecological niches</li><li>Historical biogeography</li><li>Macroevolution</li><li>Phylogenetic comparative methods</li></ul>
+        <h3><a href="https://doi.org/10.1111/syen.70076" target="_blank" rel="noopener">Exploring the historical biogeography of diving beetles (Coleoptera: Adephaga: Dytiscidae) and the determinants of their biogeographic range size</a></h3>
+        <p class="result">A dated genus-level phylogeny covering 76% of genera places the origin of diving beetles in the Nearctic (or Nearctic + Neotropics) in the Late Triassic (c. 210 Ma); habitat type, niche breadth and diversification rates are associated with range size, whereas body size is not.</p>
+        <p class="ref"><b>Ferreira, J.</b>, Toussaint, E. F. A., &amp; Condamine, F. L. (2026). <i>Systematic Entomology</i>, 51(4), e70076.<br><a href="https://doi.org/10.1111/syen.70076" target="_blank" rel="noopener">https://doi.org/10.1111/syen.70076</a></p>
+      </div>
+    </article>
+
+    <article class="pub">
+      <a class="fig" href="img/fig/cnopus.jpg" data-zoom data-caption="†Cnopus twentyonepilotorum Ferreira &amp; Nel, 2026 in Oise amber and its 3D reconstruction · ZooKeys (2026)"><img src="img/fig/cnopus_t.jpg" alt="Cnopus twentyonepilotorum in Oise amber (left) and its synchrotron 3D reconstruction (right)" width="440" height="450" loading="lazy"></a>
+      <div>
+        <div class="pub-meta"><span class="yr">2026</span><span class="jr">ZooKeys</span><span class="badge">IF 1.5</span><span class="badge oa">Open access</span></div>
+        <ul class="fields" aria-label="Research fields"><li>Palaeoecology</li><li>Palaeontology</li><li>Taxonomy</li></ul>
+        <h3><a href="https://doi.org/10.3897/zookeys.1297.210120" target="_blank" rel="noopener">First fossil species of puppet beetles (Coleoptera, Tenebrionoidea, Aderidae) from the lowermost Eocene Oise amber (France), with a review of the fossil record of Aderidae</a></h3>
+        <p class="result">Describes †<i class="tx">Cnopus twentyonepilotorum</i> Ferreira &amp; Nel, 2026 (genus <i class="tx">Cnopus</i> Champion, 1893), the first puppet beetle formally described from the c. 53 Ma Oise amber, from synchrotron 3D renderings, and reviews the whole fossil record of the family.</p>
+        <p class="ref"><b>Ferreira, J.</b>, Spiessberger, E. L., Nel, A., Patera, A., &amp; Peris, D. (2026). First fossil species of puppet beetles (Coleoptera, Tenebrionoidea, Aderidae) from the lowermost Eocene Oise amber (France), with a review of the fossil record of Aderidae. <i>ZooKeys</i>, 1297, 153–180.<br><a href="https://doi.org/10.3897/zookeys.1297.210120" target="_blank" rel="noopener">https://doi.org/10.3897/zookeys.1297.210120</a></p>
+      </div>
+    </article>
+
+
+    <article class="pub">
+      <a class="fig" href="img/fig/ptin.jpg" data-zoom data-caption="Graphical abstract · Annals of the Entomological Society of America (2026)"><img src="img/fig/ptin_t.jpg" alt="Imaginedraconium daemon in Oise amber (left) and its 3D reconstruction in ventral view with the legs in colour (right)" width="440" height="330" loading="lazy"></a>
+      <div>
+        <div class="pub-meta"><span class="yr">2026</span><span class="jr">Annals of the Entomological Society of America</span><span class="badge">IF 2.2</span></div>
+        <ul class="fields" aria-label="Research fields"><li>Palaeoecology</li><li>Palaeontology</li><li>Taxonomy</li></ul>
+        <h3><a href="https://doi.org/10.1093/aesa/saag043" target="_blank" rel="noopener">Synchrotron X-ray microtomography reveals the first fossil species of the “Cryptoramorphini” group (Coleoptera: Ptinidae: Dorcatominae) from the lowermost Eocene Oise amber of France</a></h3>
+        <p class="result">Synchrotron phase-contrast imaging of a c. 53 Ma inclusion reveals †<i class="tx">Imaginedraconium daemon</i> Ferreira, 2026 (new genus †<i class="tx">Imaginedraconium</i> Ferreira, 2026), the first fossil of the “Cryptoramorphini” group and the second-oldest record of the subfamily Dorcatominae.</p>
+        <p class="ref"><b>Ferreira, J.</b>, Spiessberger, E. L., Nel, A., Patera, A., &amp; Peris, D. (2026). <i>Annals of the Entomological Society of America</i>, saag043.<br><a href="https://doi.org/10.1093/aesa/saag043" target="_blank" rel="noopener">https://doi.org/10.1093/aesa/saag043</a></p>
+      </div>
+    </article>
+
+    <article class="pub">
+      <a class="fig" href="img/fig/cydon.jpg" data-zoom data-caption="Graphical abstract · Insect Systematics and Diversity (2026)"><img src="img/fig/cydon_t.jpg" alt="Photograph and drawing of Cydonius musei next to the dated phylogeny of Trechinae" width="440" height="340" loading="lazy"></a>
+      <div>
+        <div class="pub-meta"><span class="yr">2026</span><span class="jr">Insect Systematics and Diversity</span><span class="badge">IF 2.3</span><span class="badge oa">Open access</span></div>
+        <ul class="fields" aria-label="Research fields"><li>Dating</li><li>Palaeoecology</li><li>Palaeontology</li><li>Taxonomy</li></ul>
+        <h3><a href="https://doi.org/10.1093/isd/ixag028" target="_blank" rel="noopener">New fossil species of Trechinae (Coleoptera: Carabidae) from mid-Cretaceous French amber helps refining the age of the subfamily and its tribes under total-evidence dating</a></h3>
+        <p class="result">†<i class="tx">Cydonius musei</i> Ferreira &amp; Quéinnec, 2026 (new genus †<i class="tx">Cydonius</i> Ferreira &amp; Quéinnec, 2026), the oldest known Trechinae (c. 100 Ma, Charentese amber), is recovered as sister to the soil-dwelling Anillini, and total-evidence dating places the crown of the subfamily around 137.6 Ma.</p>
+        <p class="ref"><b>Ferreira, J.</b>, Quéinnec, É., Pajot, L., Perrichot, V., &amp; Peris, D. (2026). <i>Insect Systematics and Diversity</i>, 10(4), ixag028.<br><a href="https://doi.org/10.1093/isd/ixag028" target="_blank" rel="noopener">https://doi.org/10.1093/isd/ixag028</a></p>
+      </div>
+    </article>
+
+    <article class="pub">
+      <a class="fig" href="img/fig/dyt.jpg" data-zoom data-caption="Figure 4 · Palaeontology (2026)"><img src="img/fig/dyt_t.jpg" alt="Dated genus-level phylogeny of Dytiscidae with fossil-based genus ages, the number of fossil genera through time, temperature and palaeogeographic maps" width="440" height="618" loading="lazy"></a>
+      <div>
+        <div class="pub-meta"><span class="yr">2026</span><span class="jr">Palaeontology</span><span class="badge">IF 3.2</span><span class="badge oa">Open access</span></div>
+        <ul class="fields" aria-label="Research fields"><li>Dating</li><li>Dating methods</li><li>Macroevolution</li><li>Palaeontology</li></ul>
+        <h3><a href="https://doi.org/10.1111/pala.70074" target="_blank" rel="noopener">A deep dive into the fossil record of diving beetles (Coleoptera: Dytiscidae): Bayesian inferences elucidate their origin and pulsed diversification at the genus level</a></h3>
+        <p class="result">With the Bayesian Brownian Bridge model and fossils of 41 genera and 155 species, diving beetles are dated to the Late Triassic (c. 220 Ma) or Early Jurassic (c. 190 Ma), followed by pulses of diversification probably linked to tectonic and climatic change.</p>
+        <p class="ref"><b>Ferreira, J.</b>, Jouault, C., Condamine, F. L., &amp; Peris, D. (2026). <i>Palaeontology</i>, 69(3), e70074.<br><a href="https://doi.org/10.1111/pala.70074" target="_blank" rel="noopener">https://doi.org/10.1111/pala.70074</a></p>
+      </div>
+    </article>
+
+    <article class="pub">
+      <a class="fig" href="img/fig/gondw.jpg" data-zoom data-caption="Figure 3 · Journal of Biogeography (2026)"><img src="img/fig/gondw_t.jpg" alt="Map of biogeographic regions above the dated phylogeny of bark beetles with dispersal and vicariance events, and palaeogeographic maps" width="440" height="609" loading="lazy"></a>
+      <div>
+        <div class="pub-meta"><span class="yr">2026</span><span class="jr">Journal of Biogeography</span><span class="badge">IF 3.5</span><span class="badge oa">Open access</span></div>
+        <ul class="fields" aria-label="Research fields"><li>Dating</li><li>Historical biogeography</li><li>Macroevolution</li></ul>
+        <h3><a href="https://doi.org/10.1111/jbi.70179" target="_blank" rel="noopener">Gondwanan origin of bark and ambrosia beetles and their rapid worldwide diversification during the Cretaceous</a></h3>
+        <p class="result">A dated phylogeny covering 70% of genera and time-stratified biogeographic models place the origin of bark and ambrosia beetles in Gondwana (Afrotropics and Neotropics, c. 134 Ma), followed by range expansions that dominated their history.</p>
+        <p class="ref"><b>Ferreira, J.</b>, Condamine, F. L., Pajot, L., Peris, D., &amp; Jordal, B. H. (2026). <i>Journal of Biogeography</i>, 53(2), e70179.<br><a href="https://doi.org/10.1111/jbi.70179" target="_blank" rel="noopener">https://doi.org/10.1111/jbi.70179</a></p>
+      </div>
+    </article>
+
+    <article class="pub">
+      <a class="fig" href="img/fig/sysbio.jpg" data-zoom data-caption="Figure 1 · Systematic Biology (2026)"><img src="img/fig/sysbio_t.jpg" alt="Total-evidence dated phylogeny of bark beetles including fossils, with the angiosperm radiation and the Angiosperm Terrestrial Revolution highlighted" width="440" height="570" loading="lazy"></a>
+      <div>
+        <div class="pub-meta"><span class="yr">2026</span><span class="jr">Systematic Biology</span><span class="badge">IF 6.2</span><span class="badge oa">Open access</span></div>
+        <ul class="fields" aria-label="Research fields"><li>Dating</li><li>Dating methods</li><li>Macroevolution</li><li>Morphology</li><li>Palaeontology</li></ul>
+        <h3><a href="https://doi.org/10.1093/sysbio/syag015" target="_blank" rel="noopener">Multiple dating methods and insights from the fossil record reveal that bark beetles predate the Angiosperm Terrestrial Revolution</a></h3>
+        <p class="result">Total-evidence dating with 19 fossils, node dating and the Bayesian Brownian Bridge all date bark beetles before the Angiosperm Terrestrial Revolution (c. 150–135 Ma), and show that the fossil long used to calibrate them, †<i class="tx">Cylindrobrotus pectinatus</i> Kirejtshuk, Azar, Beaver, Mandelshtam &amp; Nel, 2009, is not a stem scolytine.</p>
+        <p class="ref"><b>Ferreira, J.</b>, Jordal, B. H., Condamine, F. L., &amp; Peris, D. (2026). <i>Systematic Biology</i>, syag015.<br><a href="https://doi.org/10.1093/sysbio/syag015" target="_blank" rel="noopener">https://doi.org/10.1093/sysbio/syag015</a></p>
+      </div>
+    </article>
+
+    <h2 class="yr-sep">2024</h2>
+
+    <article class="pub">
+      <a class="fig" href="img/fig/hydro.jpg" data-zoom data-caption="Habitus of Hydroporus queneyi Manuel &amp; Ferreira, 2024 · Zootaxa (2024)"><img src="img/fig/hydro_t.jpg" alt="Habitus of the diving beetle Hydroporus queneyi in dorsal view" width="440" height="636" loading="lazy"></a>
+      <div>
+        <div class="pub-meta"><span class="yr">2024</span><span class="jr">Zootaxa</span><span class="badge">IF 0.9</span></div>
+        <ul class="fields" aria-label="Research fields"><li>Taxonomy</li></ul>
+        <h3><a href="https://doi.org/10.11646/zootaxa.5403.2.3" target="_blank" rel="noopener"><i class="tx">Hydroporus queneyi</i> sp. n. from southern France, a new semi-subterranean diving beetle of the <i class="tx">Hydroporus normandi</i>-complex (Coleoptera, Dytiscidae, Hydroporini)</a></h3>
+        <p class="result">Describes <i class="tx">Hydroporus queneyi</i> Manuel &amp; Ferreira, 2024 (genus <i class="tx">Hydroporus</i> Clairville, 1806), a new semi-subterranean diving beetle from the Montpellier area; CO1 sequences place it closer to the Balearic endemic <i class="tx">Hydroporus lluci</i> Fery, 1999 than to its continental relatives.</p>
+        <p class="ref">Manuel, M., &amp; <b>Ferreira, J.</b> (2024). <i>Zootaxa</i>, 5403(2), 239–255.<br><a href="https://doi.org/10.11646/zootaxa.5403.2.3" target="_blank" rel="noopener">https://doi.org/10.11646/zootaxa.5403.2.3</a></p>
+      </div>
+    </article>
+
+    <article class="pub">
+      <a class="fig" href="img/fig/oecan.jpg" data-zoom data-caption="Figure 2 · Systematic Entomology (2024)"><img src="img/fig/oecan_t.jpg" alt="Total-evidence dated phylogeny of crickets (Grylloidea) with the origin of Oecanthidae at c. 162 Ma" width="440" height="447" loading="lazy"></a>
+      <div>
+        <div class="pub-meta"><span class="yr">2024</span><span class="jr">Systematic Entomology</span><span class="badge">IF 4.9</span></div>
+        <ul class="fields" aria-label="Research fields"><li>Dating</li><li>Morphology</li><li>Palaeontology</li></ul>
+        <h3><a href="https://doi.org/10.1111/syen.12625" target="_blank" rel="noopener">First 3D reconstruction of the male genitalia of a Cretaceous fossil cricket: diving into the evolutionary history of the Oecanthidae family (Orthoptera: Grylloidea) with the incorporation of new fossils in its phylogeny and a total-evidence dating approach</a></h3>
+        <p class="result">The internal male genitalia of †<i class="tx">Picogryllus carentonensis</i> Josse &amp; Desutter-Grandcolas, 2023 are reconstructed in 3D for the first time, and total-evidence dating shows that oecanthid crickets date back to the Late Jurassic (c. 162 Ma).</p>
+        <p class="ref"><b>Ferreira, J.</b>, Desutter-Grandcolas, L., Nel, A., Josse, H., &amp; de Campos, L. D. (2024). <i>Systematic Entomology</i>, 49(3), 429–446.<br><a href="https://doi.org/10.1111/syen.12625" target="_blank" rel="noopener">https://doi.org/10.1111/syen.12625</a></p>
+      </div>
+    </article>
+
+    <article class="pub">
+      <a class="fig" href="img/fig/picofw.jpg" data-zoom data-caption="†Picogryllus carentonensis Josse &amp; Desutter-Grandcolas, 2023 and its 3D forewing · Fossil Record (2024)"><img src="img/fig/picofw_t.jpg" alt="3D reconstruction of Picogryllus carentonensis with the forewing veins in colour, enlarged on the right" width="440" height="452" loading="lazy"></a>
+      <div>
+        <div class="pub-meta"><span class="yr">2024</span><span class="jr">Fossil Record</span><span class="badge">IF 2.1</span><span class="badge oa">Open access</span></div>
+        <ul class="fields" aria-label="Research fields"><li>Morphology</li><li>Palaeontology</li></ul>
+        <h3><a href="https://doi.org/10.3897/fr.27.113100" target="_blank" rel="noopener">First 3D reconstruction of a forewing of a fossil Orthoptera: interpreting the venation pattern in the smallest known cricket with a stridulatory apparatus, †<i class="tx">Picogryllus carentonensis</i> (Orthoptera, Grylloidea, Oecanthidae)</a></h3>
+        <p class="result">The 3D reconstruction of the forewing of †<i class="tx">Picogryllus carentonensis</i> Josse &amp; Desutter-Grandcolas, 2023 identifies every vein and cell, including two crossveins in the mirror, a feature rare in living crickets.</p>
+        <p class="ref"><b>Ferreira, J.</b>, Josse, H., de Campos, L. D., Nel, A., &amp; Desutter-Grandcolas, L. (2024). <i>Fossil Record</i>, 27(1), 101–110.<br><a href="https://doi.org/10.3897/fr.27.113100" target="_blank" rel="noopener">https://doi.org/10.3897/fr.27.113100</a></p>
+      </div>
+    </article>
+  </div>
+  
+</section>
+
+<!-- ===================== CONGRESSES & SEMINARS ===================== -->
+<section data-tab="congresses" id="congresses" aria-label="Congresses and seminars">
+  <div class="sec-title">
+    <div class="label">Presentations</div>
+    <h1>Congresses &amp; seminars</h1>
+  </div>
+
+  <div class="year-block">
+    <div class="yr">2026</div>
+    <ul class="events">
+      <li class="event">
+        <div class="ev">BioSyst.EU 2026</div>
+        <div class="place">Uppsala, Sweden · <span class="kind">Oral presentation</span></div>
+        <p class="talk">How old are bark beetles (Coleoptera: Curculionidae: Scolytinae)? Revisiting their evolutionary origin using multiple dating approaches.</p>
+        <p class="by"><b>Ferreira, J.</b>, Jordal, B. H., Condamine, F. L., &amp; Peris, D.</p>
+        <p class="src"><a href="https://drive.google.com/file/d/1biS90Rb407jITgGSP39mgzYJa2-E2Xry/view?usp=drive_link" target="_blank" rel="noopener">Abstract book, p. 37 ↗</a></p>
+      </li>
+      <li class="event">
+        <div class="ev">XIII European Congress of Entomology (ECE 2026)</div>
+        <div class="place">Tours, France · <span class="kind">Oral presentation</span></div>
+        <p class="talk">Bayesian inferences indicate floral turnovers as deep-time drivers of beetle diversification.</p>
+        <p class="by"><b>Ferreira, J.</b>, Jouault, C., Condamine, F. L., &amp; Peris, D.</p>
+        <p class="src"><a href="https://www.ece2026.org/wp-content/uploads/2026/06/ECE-2026-Abstract-book.pdf" target="_blank" rel="noopener">Abstract book, #10803 ↗</a></p>
+      </li>
+      <li class="event">
+        <div class="ev">Congrès de l’Association Paléontologique Française (APF 2026)</div>
+        <div class="place">Paris, France · <span class="kind">Oral presentation</span></div>
+        <p class="talk">Dynamiques macroévolutives des coléoptères à travers le temps.</p>
+        <p class="by"><b>Ferreira, J.</b>, Jouault, C., Condamine, F. L., &amp; Peris, D.</p>
+        <p class="src"><a href="https://www.assopaleo.fr/" target="_blank" rel="noopener">Association Paléontologique Française ↗</a></p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="year-block">
+    <div class="yr">2025</div>
+    <ul class="events">
+      <li class="event">
+        <div class="ev">Congress of the European Society for Evolutionary Biology (ESEB 2025)</div>
+        <div class="place">Barcelona, Spain · <span class="kind">Poster</span></div>
+        <p class="talk">Fossil placement in dated phylogenies: a case study on bark beetles (Coleoptera: Curculionidae).</p>
+        <p class="by"><b>Ferreira, J.</b>, Jordal, B. H., Condamine, F. L., &amp; Peris, D.</p>
+        <p class="src"><a href="https://eseb2025.com/docs/eseb2025-abstract-book.pdf" target="_blank" rel="noopener">Abstract book, P02.270 ↗</a></p>
+        <figure class="photo"><a class="zoomable" href="img/fig/eseb.jpg" data-zoom data-caption="Poster session · ESEB 2025, Barcelona"><img src="img/fig/eseb_t.jpg" alt="Jules Ferreira next to his poster at ESEB 2025" width="520" height="604" loading="lazy"></a><figcaption>Poster presentation, ESEB 2025, Barcelona.</figcaption></figure>
+      </li>
+      <li class="event">
+        <div class="ev">Fossil Insects: Bridging Past &amp; Present</div>
+        <div class="place">Kraków, Poland · 40th anniversary of the Palaeoentomological Section of the Polish Entomological Society · <span class="kind">Oral presentation</span></div>
+        <p class="talk">Evolutionary insights on Scolytinae (Coleoptera: Curculionidae) based on fossil and phylogenetic data.</p>
+        <p class="by"><b>Ferreira, J.</b>, Jordal, B. H., Condamine, F. L., &amp; Peris, D.</p>
+        <p class="src"><a href="https://fossilbpp.ug.edu.pl/book_fossilbpp/" target="_blank" rel="noopener">Book of abstracts, p. 30 ↗</a></p>
+        <figure class="photo"><a class="zoomable" href="img/fig/krakow.jpg" data-zoom data-caption="Talk · Fossil Insects: Bridging Past &amp; Present, Kraków (2025)"><img src="img/fig/krakow_t.jpg" alt="Jules Ferreira giving a talk in Kraków" width="440" height="700" loading="lazy"></a><figcaption>Oral presentation, Fossil Insects: Bridging Past &amp; Present 2025, Kraków.</figcaption></figure>
+      </li>
+      <li class="event">
+        <div class="ev">5th Palaeontological Virtual Congress</div>
+        <div class="place">Online · <span class="kind">Oral presentation (recorded video)</span></div>
+        <p class="talk">State of the art in Coleoptera macroevolution: a fossil record perspective.</p>
+        <p class="by"><b>Ferreira, J.</b>, Jouault, C., Condamine, F. L., &amp; Peris, D.</p>
+        <p class="src"><a href="https://www.palaeovc.org/" target="_blank" rel="noopener">Palaeontological Virtual Congress ↗</a></p>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h2 class="sub">Seminars</h2>
+    <ul class="events" style="margin-top:1.2rem">
+      <li class="event">
+        <div class="place">23 April 2026 · Institut Botànic de Barcelona (IBB) · <span class="kind">Oral presentation</span></div>
+        <p class="talk">Using the fossil record to explore macroevolutionary patterns: a case study on Coleoptera.</p>
+        <figure class="photo"><a class="zoomable" href="img/fig/seminar.jpg" data-zoom data-caption="Seminar · Institut Botànic de Barcelona (IBB), 2026"><img src="img/fig/seminar_t.jpg" alt="Jules Ferreira presenting his seminar at the Institut Botànic de Barcelona" width="440" height="587" loading="lazy"></a><figcaption>Oral presentation, seminar at the Institut Botànic de Barcelona (IBB), 2026.</figcaption></figure>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== OUTREACH ===================== -->
+<section data-tab="outreach" id="outreach" aria-label="Science outreach">
+  <div class="sec-title">
+    <div class="label">Science outreach</div>
+    <h1>Fossils in the news</h1>
+    <p>Some fossils travel far beyond scientific journals. Here are the species I described that caught the attention of the press and of the wider public.</p>
+  </div>
+
+  <div>
+    <article class="feature">
+      <a class="zoomable" href="img/fig/cnopus.jpg" data-zoom data-caption="†Cnopus twentyonepilotorum Ferreira &amp; Nel, 2026 in Oise amber and its 3D reconstruction · ZooKeys (2026)"><img src="img/fig/cnopus_t.jpg" alt="Cnopus twentyonepilotorum in Oise amber and its synchrotron 3D reconstruction" width="440" height="450" loading="lazy"></a>
+      <div>
+        <div class="label">Science meets music · November 2026</div>
+        <h3>†<i>Cnopus twentyonepilotorum</i>, a 53-million-year-old beetle named after Twenty One Pilots</h3>
+        <p>A puppet beetle (Aderidae) the size of a poppy seed (1.09 mm), preserved in the lowermost Eocene Oise amber of France and studied with synchrotron X-ray microtomography. Its name honours the band Twenty One Pilots for helping to make mental health easier to talk about. The story reached science news sites, music media and the band’s fan community, bringing a fossil beetle to an audience that rarely hears about palaeontology.</p>
+        <ul class="reach-stats" aria-label="Press coverage in numbers">
+          <li>14 news outlets</li><li>6 languages</li><li>Europe, Americas</li><li>6,658 views on ZooKeys · 15 Nov 2026</li>
+        </ul>
+        <p class="fref"><b>Ferreira, J.</b>, Spiessberger, E. L., Nel, A., Patera, A., &amp; Peris, D. (2026). <i>ZooKeys</i>, 1297, 153–180 · <a href="https://doi.org/10.3897/zookeys.1297.210120" target="_blank" rel="noopener">Read the article ↗</a></p>
+      </div>
+    </article>
+  </div>
+
+  <div>
+    <h2 class="sub">In the press</h2>
+    <ul class="press">
+      <li><span class="pdate">14 Nov 2026</span><a href="http://ct.moreover.com/?a=60849929324&amp;p=1pl&amp;v=1&amp;x=g6dPdB57B8XlCBMEYl0z4A" target="_blank" rel="noopener"><span class="outlet">G1</span><span class="headline">Besouro passou 53 milhões de anos preso em âmbar e recebeu um nome inspirado em banda famosa</span></a><span class="lang">PT</span></li>
+      <li><span class="pdate">13 Nov 2026</span><a href="http://ct.moreover.com/?a=60841226807&amp;p=1pl&amp;v=1&amp;x=v1PlpNLZdOmND5vvBekK4A" target="_blank" rel="noopener"><span class="outlet">Science &amp; Vie</span><span class="headline">Dans l’Oise, des chercheurs ont découvert un coléoptère piégé dans l’ambre depuis 53 millions d’années : ils l’ont baptisé en hommage au groupe Twenty One Pilots</span></a><span class="lang">FR</span></li>
+      <li><span class="pdate">12 Nov 2026</span><a href="http://ct.moreover.com/?a=60829875402&amp;p=1pl&amp;v=1&amp;x=6vubMpyJkcbcmcWe0Pd2sA" target="_blank" rel="noopener"><span class="outlet">elDiario.es</span><span class="headline">Twenty One Pilots da nombre a una nueva especie de escarabajo de 53 millones de años</span></a><span class="lang">ES</span></li>
+      <li><span class="pdate">11 Nov 2026</span><a href="https://eu.dispatch.com/story/entertainment/2026/11/11/twenty-one-pilots-beetle-species-discovered/92726960007/" target="_blank" rel="noopener"><span class="outlet">The Columbus Dispatch</span><span class="headline">Scientists name ancient beetle species after Twenty One Pilots</span></a><span class="lang">EN</span></li>
+      <li><span class="pdate">11 Nov 2026</span><a href="https://radiou.com/musicnews/twenty-one-pilots-has-new-beetle-species-named-after-their-band/" target="_blank" rel="noopener"><span class="outlet">RadioU</span><span class="headline">twenty one pilots has new beetle species named after their band</span></a><span class="lang">EN</span></li>
+      <li><span class="pdate">11 Nov 2026</span><a href="http://ct.moreover.com/?a=60827134368&amp;p=1pl&amp;v=1&amp;x=3QNhlJcOxLfQyy9jx71b5A" target="_blank" rel="noopener"><span class="outlet">AOL</span><span class="headline">Scientists name ancient beetle species after Twenty One Pilots</span></a><span class="lang">EN</span></li>
+      <li><span class="pdate">11 Nov 2026</span><a href="https://zap.aeiou.pt/um-besouro-de-53-milhoes-de-anos-ganhou-o-nome-dos-twenty-one-pilots-774295" target="_blank" rel="noopener"><span class="outlet">ZAP</span><span class="headline">Um besouro de 53 milhões de anos ganhou o nome dos Twenty One Pilots</span></a><span class="lang">PT</span></li>
+      <li><span class="pdate">10 Nov 2026</span><a href="http://ct.moreover.com/?a=60819231764&amp;p=1pl&amp;v=1&amp;x=jfbQVL_4ff3EMBo3FkjWQA" target="_blank" rel="noopener"><span class="outlet">infobae</span><span class="headline">Descubren una especie de escarabajo de 53 millones de años y la nombran en honor a una histórica banda musical</span></a><span class="lang">ES</span></li>
+      <li><span class="pdate">10 Nov 2026</span><a href="http://ct.moreover.com/?a=60815865532&amp;p=1pl&amp;v=1&amp;x=KJmUHMKmeXbAxH0zUl8nHg" target="_blank" rel="noopener"><span class="outlet">AlphaGalileo</span><span class="headline">Tiny beetle trapped in 53-million-year-old amber is named after Twenty One Pilots</span></a><span class="lang">EN</span></li>
+      <li><span class="pdate">10 Nov 2026</span><a href="http://ct.moreover.com/?a=60814778423&amp;p=1pl&amp;v=1&amp;x=KrG-ukbHoCb9MDIBxBbTQg" target="_blank" rel="noopener"><span class="outlet">Tocka</span><span class="headline">Бубачка стара 53 милиони години доби име по „Twenty One Pilots“</span></a><span class="lang">MK</span></li>
+      <li><span class="pdate">Nov 2026</span><a href="https://www.discovermagazine.com/a-poppy-seed-sized-beetle-locked-in-amber-53-million-years-ago-mirrors-its-modern-relatives-49938" target="_blank" rel="noopener"><span class="outlet">Discover Magazine</span><span class="headline">A poppy seed-sized beetle locked in amber 53 million years ago mirrors its modern relatives</span></a><span class="lang">EN</span></li>
+      <li><span class="pdate">Nov 2026</span><a href="https://snob.ru/news/zhivshego-53-mln-nazad-zhuka-nazvali-v-chest-gruppy-twenty-one-pilots/" target="_blank" rel="noopener"><span class="outlet">Snob</span><span class="headline">Жука, жившего 53 млн лет назад, назвали в честь группы Twenty One Pilots</span></a><span class="lang">RU</span></li>
+      <li><span class="pdate">9 Nov 2026</span><a href="https://phys.org/news/2026-11-tiny-beetle-million-year-amber.html" target="_blank" rel="noopener"><span class="outlet">Phys.org</span><span class="headline">Tiny beetle trapped in 53-million-year-old amber is named after Twenty One Pilots</span></a><span class="lang">EN</span></li>
+      <li><span class="pdate">9 Nov 2026</span><a href="http://ct.moreover.com/?a=60811205050&amp;p=1pl&amp;v=1&amp;x=OU0ZgNWRZQR9K7cahXPqCA" target="_blank" rel="noopener"><span class="outlet">EurekAlert!</span><span class="headline">Tiny beetle trapped in 53-million-year-old amber is named after Twenty One Pilots</span></a><span class="lang">EN</span></li>
+    </ul>
+  </div>
+
+  <div>
+    <h2 class="sub">Blogs</h2>
+    <ul class="press">
+      <li><span class="pdate">10 Nov 2026</span><a href="https://blog.pensoft.net/2026/11/10/tiny-beetle-trapped-in-53-million-year-old-amber-is-named-after-twenty-one-pilots/" target="_blank" rel="noopener"><span class="outlet">Pensoft blog</span><span class="headline">Tiny beetle trapped in 53-million-year-old amber is named after Twenty One Pilots</span></a><span class="lang">EN</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== FUNDING ===================== -->
+<section data-tab="funding" id="funding" aria-label="Funding">
+  <div class="sec-title">
+    <div class="label">Contracts &amp; grants</div>
+    <h1>Funding</h1>
+  </div>
+
+  <ul class="rows">
+    <li>
+      <div>
+        <div class="what">JAE-Predoc PhD contract</div>
+        <div class="who">Spanish National Research Council (CSIC)</div>
+        <div class="code">JAEPR23033</div>
+      </div>
+    </li>
+    <li>
+      <div>
+        <div class="what">IMOVE mobility grant</div>
+        <div class="who">Spanish National Research Council (CSIC)</div>
+        <div class="code">IMOVE20614</div>
+      </div>
+    </li>
+    <li>
+      <div>
+        <div class="what">Mobility grant</div>
+        <div class="who">Swiss Systematics Society (SSS)</div>
+      </div>
+    </li>
+  </ul>
+
+  <div>
+    <h2 class="sub">Research projects supporting my work</h2>
+    <ul class="rows" style="margin-top:1rem;border-top:0">
+      <li><div><div class="what">FLOW</div><div class="code">PID2023-151735NA-I00 · Ministry of Science, Innovation and Universities of Spain (MICIU/AEI/FEDER)</div></div><div></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== EXPERIENCE ===================== -->
+<section data-tab="experience" id="experience" aria-label="Experience">
+  <div class="sec-title">
+    <div class="label">Positions, stays &amp; facilities</div>
+    <h1>Experience</h1>
+  </div>
+
+  <div>
+    <h2 class="sub">PhD &amp; research facilities</h2>
+    <ul class="timeline" style="margin-top:1.4rem">
+    <li>
+      <div class="when"><span class="label">Current</span></div>
+      <div>
+        <h3>PhD candidate</h3>
+        <div class="inst">IBB (CSIC-CMCNB) &amp; Facultat de Ciències de la Terra, UB, Barcelona, Spain</div>
+        <p class="desc">Macroevolution of beetles from the fossil record, supervised by Dr David Peris (IBB) and Dr Fabien L. Condamine (ISEM). Funded by a CSIC JAE-Predoc contract.</p>
+      </div>
+    </li>
+    <li>
+      <div class="when"><span class="label">2025</span></div>
+      <div>
+        <h3>Synchrotron experiment</h3>
+        <div class="inst">ALBA Synchrotron, BL31-FaXToR beamline, Cerdanyola del Vallès, Spain</div>
+        <p class="desc">Experiment 20250340079, led by Dr David Peris: phase-contrast X-ray microtomography of fossil Coleoptera in amber.</p>
+        <figure class="photo wide"><a class="zoomable" href="img/fig/alba.jpg" data-zoom data-caption="Mounting a sample on the BL31-FaXToR beamline · ALBA Synchrotron (2025)"><img src="img/fig/alba_t.jpg" alt="Jules Ferreira mounting an amber sample on the beamline at ALBA Synchrotron" width="520" height="367" loading="lazy"></a><figcaption>Mounting a sample on the BL31-FaXToR beamline.</figcaption></figure>
+      </div>
+    </li>
+    </ul>
+  </div>
+
+  <div>
+    <h2 class="sub">Research stays</h2>
+    <ul class="timeline" style="margin-top:1.4rem">
+    <li>
+      <div class="when"><span class="label">During the PhD</span></div>
+      <div>
+        <h3>Research stay · 2 months</h3>
+        <div class="inst">ISEM (CNRS – Université de Montpellier), Montpellier, France</div>
+        <p class="desc">Work with my co-supervisor, Dr Fabien L. Condamine, on diversification methods applied to my own data, using among others PyRate (MCDD, BDNN, DES), DeepDive, BAMM, RevBayes, ClaDS, BiSSE / HiSSE and total-evidence dating.</p>
+      </div>
+    </li>
+    <li>
+      <div class="when"><span class="label">During the PhD</span></div>
+      <div>
+        <h3>Research stay · 1 month</h3>
+        <div class="inst">MNHN &amp; ISYEB, Paris, France</div>
+        <p class="desc">Study of the Scolytinae collection and of amber fossils from the Oise deposit, in collaboration with the ISYEB team.</p>
+      </div>
+    </li>
+    </ul>
+  </div>
+
+  <div>
+    <h2 class="sub">Master theses &amp; internship</h2>
+    <ul class="timeline" style="margin-top:1.4rem">
+    <li>
+      <div class="when"><span class="label">Feb – Jun 2024</span></div>
+      <div>
+        <h3>Master 2 thesis · 5 months</h3>
+        <div class="inst">ISYEB (MNHN, Sorbonne Université), Paris, France · supervised by Prof. Michaël Manuel</div>
+        <p class="desc"><i>Integrative taxonomy of the genus</i> Methles <i>Sharp, 1882 in Madagascar (Coleoptera: Dytiscidae: Methlini).</i> Species delimitation combining morphology, COI barcodes, habitat and distribution, with median lobes studied under differential interference contrast microscopy and scanning electron microscopy (SEM). The sensilla of the cephalic appendages were also compared within the genus and the tribe, in search of new diagnostic characters.</p>
+        <p class="doc">Master 2 thesis available on request: <a href="mailto:jules.ferreira27@gmail.com?subject=Master%202%20thesis%20request">jules.ferreira27@gmail.com</a></p>
+        <figure class="photo"><a class="zoomable" href="img/fig/m2_methles.jpg" data-zoom data-caption="Methles Sharp, 1882 from Madagascar · M2 internship"><img src="img/fig/m2_methles_t.jpg" alt="Habitus of a Methles diving beetle from Madagascar in dorsal view" width="360" height="578" loading="lazy"></a></figure>
+      </div>
+    </li>
+    <li>
+      <div class="when"><span class="label">Apr – Jun 2023</span></div>
+      <div>
+        <h3>Master 1 thesis · 2 months</h3>
+        <div class="inst">ISYEB (MNHN, Sorbonne Université), Paris, France · supervised by Prof. Laure Desutter-Grandcolas</div>
+        <p class="desc"><i>3D reconstructions of a fossil cricket, its incorporation in a total-evidence phylogenetic analysis and divergence-time estimates of the family Oecanthidae (Orthoptera: Grylloidea).</i> Synchrotron-based 3D reconstructions of the wings and male genitalia of Cretaceous amber crickets, which led to two articles published in 2024 (<i>Systematic Entomology</i> and <i>Fossil Record</i>).</p>
+        <p class="doc"><a href="docs/Ferreira_M1_thesis_2023.pdf" target="_blank" rel="noopener">Master 1 thesis (PDF, in French) ↗</a></p>
+        <figure class="photo"><a class="zoomable" href="img/fig/m1_cricket.jpg" data-zoom data-caption="3D reconstructions of a Cretaceous cricket · M1 internship"><img src="img/fig/m1_cricket_t.jpg" alt="3D reconstructions of a fossil cricket: whole body, forewing venation and male genitalia with interpretive drawings" width="360" height="591" loading="lazy"></a></figure>
+      </div>
+    </li>
+    <li>
+      <div class="when"><span class="label">Apr – May 2021</span></div>
+      <div>
+        <h3>Bachelor internship (2nd year) · 6 weeks</h3>
+        <div class="inst">ISYEB (MNHN, Sorbonne Université), Paris, France · supervised by Prof. Michaël Manuel</div>
+        <p class="desc"><i>Integrative taxonomy of a new species of aquatic beetle from southern France (Coleoptera: Dytiscidae).</i> Morpho-anatomical study, molecular phylogenetic analyses and fieldwork on a new semi-subterranean diving beetle, later described as <i>Hydroporus queneyi</i> Manuel &amp; Ferreira, 2024 in <i>Zootaxa</i>.</p>
+        <p class="doc"><a href="docs/Ferreira_L2_internship_report_2021.pdf" target="_blank" rel="noopener">Internship report (PDF, in French) ↗</a></p>
+        <figure class="photo"><a class="zoomable" href="img/fig/hydro.jpg" data-zoom data-caption="Hydroporus queneyi Manuel &amp; Ferreira, 2024 · Bachelor internship"><img src="img/fig/hydro_t.jpg" alt="Habitus of the diving beetle Hydroporus queneyi in dorsal view" width="440" height="636" loading="lazy"></a></figure>
+      </div>
+    </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== COLLABORATIONS ===================== -->
+<section data-tab="collaborations" id="collaborations" aria-label="Collaborations">
+  <div class="sec-title">
+    <div class="label">People I work with</div>
+    <h1>Collaborations</h1>
+  </div>
+  <ul class="collab">
+    <li>
+      <div class="cname">Dr David Peris</div>
+      <div class="caff">Institut Botànic de Barcelona (CSIC-CMCNB), Barcelona, Spain</div>
+      <div class="ctopic">Plant–insect interactions in the past</div>
+    </li>
+    <li>
+      <div class="cname">Dr Fabien L. Condamine</div>
+      <div class="caff">Institut des Sciences de l’Évolution de Montpellier (CNRS, Université de Montpellier), France</div>
+      <div class="ctopic">Macroevolution</div>
+    </li>
+    <li>
+      <div class="cname">Prof. André Nel</div>
+      <div class="caff">Institut de Systématique, Évolution, Biodiversité (ISYEB), Muséum national d’Histoire naturelle, Paris, France</div>
+      <div class="ctopic">Palaeoentomology</div>
+    </li>
+    <li>
+      <div class="cname">Prof. Michaël Manuel</div>
+      <div class="caff">Institut de Systématique, Évolution, Biodiversité (ISYEB), Sorbonne Université, Paris, France</div>
+      <div class="ctopic">Diving beetle taxonomy and sensory organs of aquatic beetles</div>
+    </li>
+    <li>
+      <div class="cname">Dr Bjarte H. Jordal</div>
+      <div class="caff">University Museum of Bergen, University of Bergen, Norway</div>
+      <div class="ctopic">Taxonomy and systematics of bark and ambrosia beetles (Scolytinae and Platypodinae)</div>
+    </li>
+    <li>
+      <div class="cname">Dr Corentin Jouault</div>
+      <div class="caff">Oxford University Museum of Natural History, University of Oxford, United Kingdom</div>
+      <div class="ctopic">Insect macroevolution</div>
+    </li>
+    <li>
+      <div class="cname">Erich L. Spiessberger</div>
+      <div class="caff">Institut Botànic de Barcelona (CSIC-CMCNB), Barcelona, Spain</div>
+      <div class="ctopic">Beetle morphology and 3D imaging (segmentation and reconstructions)</div>
+    </li>
+    <li>
+      <div class="cname">Laura Pajot</div>
+      <div class="caff">Institut Botànic de Barcelona (CSIC-CMCNB) &amp; Universitat de Barcelona, Spain</div>
+      <div class="ctopic">Angiosperm macroevolution</div>
+    </li>
+    <li>
+      <div class="cname">Dr Alessandra Patera</div>
+      <div class="caff">ALBA Synchrotron, Cerdanyola del Vallès, Spain</div>
+      <div class="ctopic">Synchrotron X-ray imaging · scientist in charge of the BL31-FaXToR beamline</div>
+    </li>
+  </ul>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section data-tab="contact" id="contact" aria-label="Contact">
+  <div class="sec-title">
+    <div class="label">Get in touch</div>
+    <h1>Contact</h1>
+  </div>
+
+  <div class="contact">
+    <div class="mail">
+      <div class="label">Institutional</div>
+      <div class="addr-row">
+        <span class="addr" id="mail-inst">jules.ferreira@ibb.csic.es</span>
+        <button class="copy" type="button" data-copy="mail-inst">Copy</button>
+        <a class="write" href="mailto:jules.ferreira@ibb.csic.es">Write</a>
+      </div>
+    </div>
+    <div class="mail">
+      <div class="label">Personal</div>
+      <div class="addr-row">
+        <span class="addr" id="mail-perso">jules.ferreira27@gmail.com</span>
+        <button class="copy" type="button" data-copy="mail-perso">Copy</button>
+        <a class="write" href="mailto:jules.ferreira27@gmail.com">Write</a>
+      </div>
+    </div>
+    <div class="mail">
+      <div class="label">Postal address</div>
+      <address>Institut Botànic de Barcelona (CSIC-CMCNB)<br>Passeig del Migdia, s/n<br>08038 Barcelona, Spain</address>
+    </div>
+    <div class="mail">
+      <div class="label">Profiles</div>
+      <div class="profile-links">
+        <a href="https://orcid.org/0009-0006-1919-8979" target="_blank" rel="noopener">ORCID · 0009-0006-1919-8979 ↗</a>
+        <a href="https://www.researchgate.net/profile/Jules-Ferreira-2" target="_blank" rel="noopener">ResearchGate ↗</a>
+        <a href="https://x.com/JulesFerre94120" target="_blank" rel="noopener">X · @JulesFerre94120 ↗</a>
+        <a href="https://bsky.app/profile/jules2701.bsky.social" target="_blank" rel="noopener">Bluesky · @jules2701.bsky.social ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <footer class="foot">© 2026 Jules Ferreira · Last updated November 2026</footer>
+    </div>
+  </main>
+</div>
+
+<dialog id="zoom" class="zoom" aria-labelledby="zoom-cap">
+  <div class="zoom-bar">
+    <span class="zcap" id="zoom-cap"></span>
+    <span class="zact">
+      <form method="dialog"><button type="submit">Close ✕</button></form>
+    </span>
+  </div>
+  <div class="zoom-body"><img id="zoom-img" alt=""></div>
+</dialog>
+
+<script>
+(function () {
+  var TABS = ['about', 'publications', 'congresses', 'outreach', 'funding', 'experience', 'collaborations', 'contact'];
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section[data-tab]'));
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.tabs a'));
+  function show(h, scroll) {
+    if (TABS.indexOf(h) < 0) h = 'about';
+    sections.forEach(function (s) { s.hidden = s.getAttribute('data-tab') !== h; });
+    links.forEach(function (a) {
+      if (a.getAttribute('href') === '#' + h) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+    if (scroll) { try { window.scrollTo(0, 0); } catch (e) {} }
+  }
+  function fromHash() { var h = ''; try { h = (location.hash || '').replace('#', ''); } catch (e) {} return h; }
+  // tabs switch on click directly (works even where changing the address is not allowed, e.g. previews)
+  links.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var h = a.getAttribute('href').replace('#', '');
+      show(h, true);
+      try { history.replaceState(null, '', '#' + h); } catch (err) {}
+    });
+  });
+  window.addEventListener('hashchange', function () { show(fromHash(), true); });
+  show(fromHash(), false);
+
+  Array.prototype.forEach.call(document.querySelectorAll('button.copy'), function (b) {
+    b.addEventListener('click', function () {
+      var el = document.getElementById(b.getAttribute('data-copy'));
+      var text = el.textContent.trim();
+      function done(msg) { b.textContent = msg; setTimeout(function () { b.textContent = 'Copy'; }, 1600); }
+      function select() {
+        var r = document.createRange(); r.selectNodeContents(el);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); done('Selected');
+      }
+      try { navigator.clipboard.writeText(text).then(function () { done('Copied'); }, select); }
+      catch (e) { select(); }
+    });
+  });
+
+  // figure viewer: click a publication figure to see it large; click the large image for full resolution
+  var dlg = document.getElementById('zoom');
+  var zimg = document.getElementById('zoom-img');
+  var zcap = document.getElementById('zoom-cap');
+  Array.prototype.forEach.call(document.querySelectorAll('a[data-zoom]'), function (a) {
+    a.addEventListener('click', function (e) {
+      if (!dlg || typeof dlg.showModal !== 'function') return; // no <dialog>: the link opens the image
+      e.preventDefault();
+      zimg.classList.remove('actual');
+      zimg.src = a.getAttribute('href');
+      zimg.alt = a.querySelector('img').alt;
+      zcap.textContent = a.getAttribute('data-caption') || '';
+      dlg.showModal();
+    });
+  });
+  if (dlg && typeof dlg.showModal === 'function') {
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+    zimg.addEventListener('click', function () { zimg.classList.toggle('actual'); });
+    dlg.addEventListener('close', function () { zimg.removeAttribute('src'); });
+  }
+})();
+</script>
+
+</body>
+</html>
