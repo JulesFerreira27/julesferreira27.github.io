@@ -246,14 +246,26 @@ address{font-style:normal;line-height:1.55}
 .reach-stats{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.8rem;list-style:none;padding:0}
 .reach-stats li{font:500 .78rem/1.25 var(--mono);background:var(--chip);color:var(--accent-ink);padding:.42rem .6rem;border-radius:3px}
 .press{list-style:none;margin:.4rem 0 0;padding:0}
-.press li{display:grid;grid-template-columns:6.5rem minmax(0,1fr) auto;gap:1rem;align-items:baseline;padding-block:.8rem;border-bottom:1px solid var(--rule)}
+.press li{display:grid;grid-template-columns:6.5rem minmax(0,1fr) auto;gap:1rem;align-items:baseline;padding-block:.5rem;border-bottom:1px solid var(--rule)}
 .press .pdate{font:500 .78rem/1.5 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
 .press a{text-decoration:none;color:var(--fg);min-width:0}
 .press a:hover .outlet,.press a:focus-visible .outlet{color:var(--accent-ink);text-decoration:underline}
-.press .outlet{display:block;font:700 1rem/1.3 var(--display)}
-.press .headline{display:block;font-size:.93rem;color:var(--muted);margin-top:.15rem}
+.press .outlet{display:inline;font:700 .97rem/1.3 var(--display);white-space:nowrap}
+.press .headline{font-size:.9rem;color:var(--muted);margin-left:.5rem}
+.press a{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.synd summary .outlet{display:block;white-space:normal}.synd summary .headline{display:block;margin:.1rem 0 0}
 .press .lang{font:500 .7rem/1 var(--mono);letter-spacing:.06em;color:var(--muted);border:1px solid var(--rule);border-radius:3px;padding:.3rem .4rem}
-@media (max-width:860px){.press li{grid-template-columns:minmax(0,1fr) auto;gap:.2rem .8rem}.press .pdate{grid-column:1 / -1}}
+@media (max-width:860px){.press li{grid-template-columns:minmax(0,1fr) auto;gap:.2rem .8rem}.press .pdate{grid-column:1 / -1}.press a{white-space:normal}.press .outlet{white-space:normal}.press .headline{display:block;margin:.1rem 0 0}}
+.synd{padding-block:.5rem;border-bottom:1px solid var(--rule)}
+.synd summary{display:grid;grid-template-columns:6.5rem minmax(0,1fr) auto;gap:1rem;align-items:baseline;cursor:pointer;list-style:none}
+.synd summary::-webkit-details-marker{display:none}
+.synd summary .outlet::after{content:" ▸";color:var(--muted);font-weight:400}
+.synd[open] summary .outlet::after{content:" ▾"}
+.synd .chips{display:flex;flex-wrap:wrap;gap:.35rem;margin:.7rem 0 0 7.5rem;padding:0;list-style:none}
+.synd .chips a{color:inherit;text-decoration:none}.synd .chips a:hover{text-decoration:underline}
+.synd .chips li{display:inline-block;border:0;font:500 .74rem/1.2 var(--mono);background:var(--chip);color:var(--accent-ink);padding:.32rem .5rem;border-radius:3px}
+@media (max-width:860px){.synd summary{grid-template-columns:minmax(0,1fr) auto;gap:.2rem .8rem}.synd summary .pdate{grid-column:1 / -1}.synd .chips{margin-left:0}}
+.press li.synd-row{display:block;padding-block:0}
 footer.foot{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--rule);font:400 .76rem/1.5 var(--mono);color:var(--muted)}
 
 /* ---------- narrow screens ---------- */
@@ -654,7 +666,7 @@ footer.foot{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--rule
         <h3>†<i>Cnopus twentyonepilotorum</i>, a 53-million-year-old beetle named after Twenty One Pilots</h3>
         <p>A puppet beetle (Aderidae) the size of a poppy seed (1.09 mm), preserved in the lowermost Eocene Oise amber of France and studied with synchrotron X-ray microtomography. Its name honours the band Twenty One Pilots for helping to make mental health easier to talk about. The story reached science news sites, music media and the band’s fan community, bringing a fossil beetle to an audience that rarely hears about palaeontology.</p>
         <ul class="reach-stats" aria-label="Press coverage in numbers">
-          <li>16 news outlets</li><li>6 languages</li><li>Europe, Americas</li><li>6,778 views on ZooKeys · 16 Nov 2026</li><li><a href="https://www.altmetric.com/details.php?domain=zookeys.pensoft.net&amp;citation_id=207895551&amp;tab=twitter" target="_blank" rel="noopener" style="color:inherit">Posted by 885 X users ↗</a></li>
+          <li>35 news outlets</li><li>6 languages</li><li>Europe, Americas</li><li>6,778 views on ZooKeys · 16 Nov 2026</li><li><a href="https://www.altmetric.com/details.php?domain=zookeys.pensoft.net&amp;citation_id=207895551&amp;tab=twitter" target="_blank" rel="noopener" style="color:inherit">Posted by 885 X users ↗</a></li>
         </ul>
         <p class="fref"><b>Ferreira, J.</b>, Spiessberger, E. L., Nel, A., Patera, A., &amp; Peris, D. (2026). <i>ZooKeys</i>, 1297, 153–180 · <a href="https://doi.org/10.3897/zookeys.1297.210120" target="_blank" rel="noopener">Read the article ↗</a></p>
       </div>
@@ -674,6 +686,7 @@ footer.foot{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--rule
   <div>
     <h2 class="sub">In the press</h2>
     <ul class="press">
+      <li class="synd-row"><details class="synd"><summary><span class="pdate">16 Nov 2026</span><span><span class="outlet">US local press · SWNS wire (19 outlets)</span><span class="headline">Beetle preserved in ancient amber named for Twenty One Pilots? · by Stephen Beech</span></span><span class="lang">EN</span></summary><ul class="chips" aria-label="Outlets that ran the story"><li><a href="http://ct.moreover.com/?a=60861496547&amp;p=1pl&amp;v=1&amp;x=5JLY-cMHMNGKtjwd3Zq-xQ" target="_blank" rel="noopener">Yahoo!</a></li><li><a href="http://ct.moreover.com/?a=60861609166&amp;p=1pl&amp;v=1&amp;x=HOgVeg9iPP7UB40HQQHhkg" target="_blank" rel="noopener">Key West Citizen</a></li><li><a href="http://ct.moreover.com/?a=60861488252&amp;p=1pl&amp;v=1&amp;x=-QmFzDTSn7E12eo6eOKBAw" target="_blank" rel="noopener">Daily Sentinel Grand Junction</a></li><li><a href="http://ct.moreover.com/?a=60862340412&amp;p=1pl&amp;v=1&amp;x=tj2TgWlDt5BHlolg6wVX7g" target="_blank" rel="noopener">Index Journal</a></li><li><a href="http://ct.moreover.com/?a=60861661807&amp;p=1pl&amp;v=1&amp;x=3E0j_zRYxfMmquu8ixVIWg" target="_blank" rel="noopener">Woburn Daily Times Chronicle</a></li><li><a href="http://ct.moreover.com/?a=60861632622&amp;p=1pl&amp;v=1&amp;x=OFFTVKOig_8cFhOiuer_jw" target="_blank" rel="noopener">Atlantic News Telegraph</a></li><li><a href="http://ct.moreover.com/?a=60861630855&amp;p=1pl&amp;v=1&amp;x=ZZ_Dr-IU859YA2KB8sOJOQ" target="_blank" rel="noopener">The Times-Georgian</a></li><li><a href="http://ct.moreover.com/?a=60861515390&amp;p=1pl&amp;v=1&amp;x=2O8k2XLrUWPu1PVkU0TdwA" target="_blank" rel="noopener">Laconia Daily Sun</a></li><li><a href="http://ct.moreover.com/?a=60861621330&amp;p=1pl&amp;v=1&amp;x=ZpYRyqWLMZ_cOklmnj8-8A" target="_blank" rel="noopener">Tracy Press</a></li><li><a href="http://ct.moreover.com/?a=60861614341&amp;p=1pl&amp;v=1&amp;x=sAi8Mm2afxScAvgBZuccDA" target="_blank" rel="noopener">Princeton Daily Clarion</a></li><li><a href="http://ct.moreover.com/?a=60861976860&amp;p=1pl&amp;v=1&amp;x=WExwbtq2UzELPt58Y9lU8Q" target="_blank" rel="noopener">Douglas County Sentinel</a></li><li><a href="http://ct.moreover.com/?a=60862299380&amp;p=1pl&amp;v=1&amp;x=BKdXpozly0qsN0_i1C_v6Q" target="_blank" rel="noopener">Hazard Herald</a></li><li><a href="http://ct.moreover.com/?a=60861953515&amp;p=1pl&amp;v=1&amp;x=Cv0Ny35zmbau5M2fj5RO_Q" target="_blank" rel="noopener">Appalachian News Express</a></li><li><a href="http://ct.moreover.com/?a=60861713271&amp;p=1pl&amp;v=1&amp;x=JpFnslSni9fAo6-e7LM6PQ" target="_blank" rel="noopener">Iosco County News-Herald</a></li><li><a href="http://ct.moreover.com/?a=60861575778&amp;p=1pl&amp;v=1&amp;x=an5gSRbwW_4j856BUDkT7Q" target="_blank" rel="noopener">Fairfield Sun Times</a></li><li><a href="http://ct.moreover.com/?a=60861563571&amp;p=1pl&amp;v=1&amp;x=sUbzmYimT_TjVahYQq_QlQ" target="_blank" rel="noopener">The McDuffie Progress</a></li><li><a href="http://ct.moreover.com/?a=60861587151&amp;p=1pl&amp;v=1&amp;x=cH8tE-F_4wVp1aNNdNl_DQ" target="_blank" rel="noopener">The Messenger</a></li><li><a href="http://ct.moreover.com/?a=60861624815&amp;p=1pl&amp;v=1&amp;x=4_pp2MOTULZBaZ1U8KjEyQ" target="_blank" rel="noopener">Albia Newspapers</a></li><li><a href="http://ct.moreover.com/?a=60861964031&amp;p=1pl&amp;v=1&amp;x=Fj9TWXRjGlcoM97wtleR-A" target="_blank" rel="noopener">TownTimesNews.com</a></li></ul></details></li>
       <li><span class="pdate">16 Nov 2026</span><a href="http://ct.moreover.com/?a=60860097947&amp;p=1pl&amp;v=1&amp;x=hVKwOegfhTGkQOT2fs5dfw" target="_blank" rel="noopener"><span class="outlet">Aventuras na História</span><span class="headline">Besouro de 53 milhões de anos preservado em âmbar é nomeado em homenagem a banda</span></a><span class="lang">PT</span></li>
       <li><span class="pdate">Nov 2026</span><a href="https://www.cells.es/en/public/news/rocking-the-prehistoric-world-53-million-year-old-beetles-named-after-rock-bands-revealed-by-alba" target="_blank" rel="noopener"><span class="outlet">ALBA Synchrotron</span><span class="headline">Rocking the prehistoric world: 53-million-year-old beetles named after rock bands revealed by ALBA</span></a><span class="lang">EN</span></li>
       <li><span class="pdate">14 Nov 2026</span><a href="http://ct.moreover.com/?a=60849929324&amp;p=1pl&amp;v=1&amp;x=g6dPdB57B8XlCBMEYl0z4A" target="_blank" rel="noopener"><span class="outlet">G1</span><span class="headline">Besouro passou 53 milhões de anos preso em âmbar e recebeu um nome inspirado em banda famosa</span></a><span class="lang">PT</span></li>
