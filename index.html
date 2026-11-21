@@ -112,6 +112,22 @@ a.zoomable:hover img{border-color:var(--accent)}
 .photo{max-width:11rem;margin-top:.8rem}
 .photo.wide{max-width:22rem}
 .timeline p.doc{margin-top:.55rem;font:500 .8rem/1.3 var(--mono)}
+/* carousel (photos of a congress): swipe or arrows; click a photo to enlarge it */
+.carousel{margin:.9rem 0 0;max-width:30rem}
+.car-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;border:1px solid var(--rule);border-radius:3px;background:#000}
+.car-track::-webkit-scrollbar{display:none}
+.car-slide{flex:0 0 100%;scroll-snap-align:start;margin:0}
+.car-slide a{display:block;cursor:zoom-in}
+.car-slide img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;display:block}
+.car-nav{display:flex;align-items:center;justify-content:space-between;gap:.8rem;margin-top:.55rem}
+.car-nav button.car-btn{font:500 .9rem/1 var(--mono);color:var(--fg);background:transparent;border:1px solid var(--rule);border-radius:3px;width:2.2rem;height:2.2rem;cursor:pointer}
+.car-nav button.car-btn:hover{border-color:var(--accent);color:var(--accent-ink)}
+.car-dots{display:flex;gap:.2rem}
+.car-dots button{width:1.6rem;height:1.6rem;border:0;padding:0;background:transparent;cursor:pointer;display:grid;place-items:center}
+.car-dots button::before{content:"";width:.5rem;height:.5rem;border-radius:50%;background:var(--rule);transition:background .15s}
+.car-dots button[aria-current="true"]::before{background:var(--accent)}
+.carousel figcaption{margin-top:.45rem;font-size:.86rem;line-height:1.5;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.car-track{scroll-behavior:auto}}
 .examples.three{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.62fr);align-items:start}
 .examples.field{grid-template-columns:minmax(0,2fr) minmax(0,1fr);align-items:start}
 @media (max-width:860px){.examples,.examples.field,.examples.three{grid-template-columns:minmax(0,1fr)}.examples.three figure:last-child{max-width:15rem}}
@@ -606,6 +622,19 @@ footer.foot{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--rule
         <p class="talk">Dynamiques macroévolutives des coléoptères à travers le temps.</p>
         <p class="by"><b>Ferreira, J.</b>, Jouault, C., Condamine, F. L., &amp; Peris, D.</p>
         <p class="src"><a href="https://www.assopaleo.fr/" target="_blank" rel="noopener">Association Paléontologique Française ↗</a></p>
+        <figure class="carousel" aria-roledescription="carousel" aria-label="Photos of the talk at APF 2026">
+          <div class="car-track" tabindex="0">
+            <div class="car-slide" aria-roledescription="slide" aria-label="1 of 3"><a href="img/fig/apf1.jpg" data-zoom data-caption="Oral presentation · APF 2026, Paris · photo © N. Gentis / APF"><img src="img/fig/apf1_t.jpg" alt="Jules Ferreira at the lectern in front of his title slide, Dynamiques macroévolutives des Coléoptères à travers le temps" width="900" height="601" loading="lazy"></a></div>
+            <div class="car-slide" aria-roledescription="slide" aria-label="2 of 3"><a href="img/fig/apf2.jpg" data-zoom data-caption="Oral presentation · APF 2026, Paris · photo © N. Gentis / APF"><img src="img/fig/apf2_t.jpg" alt="Jules Ferreira speaking at the lectern during his talk at APF 2026" width="900" height="601" loading="lazy"></a></div>
+            <div class="car-slide" aria-roledescription="slide" aria-label="3 of 3"><a href="img/fig/apf3.jpg" data-zoom data-caption="Oral presentation · APF 2026, Paris · photo © N. Gentis / APF"><img src="img/fig/apf3_t.jpg" alt="Jules Ferreira gesturing while presenting at APF 2026" width="900" height="601" loading="lazy"></a></div>
+          </div>
+          <div class="car-nav">
+            <button type="button" class="car-btn car-prev" aria-label="Previous photo">‹</button>
+            <div class="car-dots"></div>
+            <button type="button" class="car-btn car-next" aria-label="Next photo">›</button>
+          </div>
+          <figcaption>Oral presentation, APF 2026, Paris. Photos © N. Gentis / APF.</figcaption>
+        </figure>
       </li>
     </ul>
   </div>
@@ -1014,6 +1043,37 @@ footer.foot{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--rule
       dlg.showModal();
     });
   });
+  // carousels: arrows, dots, keyboard; the track itself scrolls (swipe on touch screens)
+  Array.prototype.forEach.call(document.querySelectorAll('.carousel'), function (c) {
+    var track = c.querySelector('.car-track');
+    var slides = c.querySelectorAll('.car-slide');
+    var dotsBox = c.querySelector('.car-dots');
+    var dots = [];
+    function cur() { return Math.round(track.scrollLeft / Math.max(track.clientWidth, 1)); }
+    function go(i) {
+      i = (i + slides.length) % slides.length;
+      track.scrollTo({ left: i * track.clientWidth });
+    }
+    function mark() {
+      var i = cur();
+      dots.forEach(function (d, k) { if (k === i) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current'); });
+    }
+    Array.prototype.forEach.call(slides, function (s, k) {
+      var d = document.createElement('button');
+      d.type = 'button'; d.setAttribute('aria-label', 'Photo ' + (k + 1) + ' of ' + slides.length);
+      d.addEventListener('click', function () { go(k); });
+      dotsBox.appendChild(d); dots.push(d);
+    });
+    c.querySelector('.car-prev').addEventListener('click', function () { go(cur() - 1); });
+    c.querySelector('.car-next').addEventListener('click', function () { go(cur() + 1); });
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); go(cur() - 1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(cur() + 1); }
+    });
+    var t; track.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(mark, 60); });
+    window.addEventListener('resize', function () { track.scrollLeft = cur() * track.clientWidth; });
+    mark();
+  });
   if (dlg && typeof dlg.showModal === 'function') {
     dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
     zimg.addEventListener('click', function () { zimg.classList.toggle('actual'); });
@@ -1024,3 +1084,5 @@ footer.foot{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--rule
 
 </body>
 </html>
+
+</body></html>
